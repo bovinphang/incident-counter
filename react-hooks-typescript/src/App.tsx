@@ -9,9 +9,8 @@ function usePrevious(value: number) {
   }, [value]);
   return ref.current;
 }
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
+const Counter: React.FC<{ initial: number }> = ({ initial = 0 }) => {
+  const [count, setCount] = useState<number>(initial);
 
   const inc = (count: number) => count + 1;
   const dec = (count: number) => count - 1;
@@ -50,6 +49,6 @@ const Counter = () => {
   );
 };
 
-const App = () => <Counter />;
+const App = () => <Counter initial={0} />;
 
 export default App;
