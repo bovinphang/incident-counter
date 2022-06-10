@@ -2,6 +2,7 @@
 import { ref, watch, watchEffect } from 'vue';
 
 const count = ref<number>(0);
+
 const inc = () => ++count.value;
 const dec = () => --count.value;
 const reset = () => {

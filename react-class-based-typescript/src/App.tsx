@@ -14,21 +14,11 @@ class Counter extends Component<CounterProps, CounterState> {
         count: 0
     };
 
-    increment = () => {
-        this.setState(({ count }) => ({ count: count + 1 }));
-    };
-
-    decrement = () => {
-        this.setState(({ count }) => ({ count: count - 1 }));
-    };
-
-    reset = () => {
-        this.setState({ count: 0 });
-    };
-
-    changeCount = (event: ChangeEvent<HTMLInputElement>) => {
+    increment = () => this.setState(({ count }) => ({ count: count + 1 }));
+    decrement = () => this.setState(({ count }) => ({ count: count - 1 }));
+    reset = () => this.setState({ count: 0 });
+    changeCount = (event: ChangeEvent<HTMLInputElement>) =>
         this.setState({ count: +event.target.value });
-    };
 
     render() {
         const { incident } = this.props;
