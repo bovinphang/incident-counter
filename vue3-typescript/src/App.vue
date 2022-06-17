@@ -3,10 +3,10 @@ import { ref, watch, watchEffect } from 'vue';
 
 const count = ref<number>(0);
 
-const inc = () => ++count.value;
-const dec = () => --count.value;
+const inc = () => ++count.value; // 递增
+const dec = () => --count.value; // 递减
 const reset = () => {
-    count.value = 0;
+    count.value = 0; // 重置
 };
 
 watch(count, (newValue: number, oldValue: number) => {
@@ -32,6 +32,7 @@ watch(count, (newValue: number, oldValue: number) => {
         <section class="controls">
             <form @submit.prevent="() => {}">
                 <label htmlFor="set-to">Set Count</label>
+                <!-- 输入框改变(双向数据绑定) -->
                 <input id="set-to" type="number" v-model="count" />
             </form>
         </section>
